@@ -1,0 +1,16 @@
+const Header = () => {
+  return (
+    <header className="header">
+      <h1>My Store</h1>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
