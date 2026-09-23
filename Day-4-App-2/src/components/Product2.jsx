@@ -1,9 +1,9 @@
 const Product2 = () => {
   return (
     <div className="product-card">
-      <h2>MacBook Air</h2>
-      <p>₹85,000</p>
-      <p>Laptop</p>
+      <h2>Trimmer</h2>
+      <p>₹1000</p>
+      <p>Electronic</p>
       <button>Buy Now</button>
     </div>
   );
