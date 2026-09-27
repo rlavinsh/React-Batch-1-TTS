@@ -10,11 +10,14 @@ const App = () => {
     console.log(cart.length);
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
   return (
     <div>
       <Navbar cart={cart.length} />
       <ProductList addToCart={addToCart} />
-      <Cart cart={cart.length} product={cart} />
+      <Cart cart={cart.length} product={cart} clearCart={clearCart} />
     </div>
   );
 };

@@ -1,33 +1,40 @@
 import React from "react";
 
-const Cart = ({ cart, product }) => {
+const Cart = ({ cart, product, clearCart }) => {
   console.log(product);
+
+  const total = product.reduce((sum, pro) => {
+    return sum + pro.price;
+  }, 0);
 
   return (
     <div>
       <h1>Cart:{cart}</h1>
 
-      {product.map((pro, index) => {
-        return (
-          <>
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "0px 50px",
-              }}
-            >
-              <span>{pro.name}</span>
-              <span>{pro.price}</span>
-            </div>
-            <hr />
-          </>
-        );
-      })}
+      {product.length === 0 ? (
+        <h2>Cart is Empty</h2>
+      ) : (
+        <>
+          {product.map((pro, index) => {
+            return (
+              <div key={index}>
+                <div className="cart-item">
+                  <span>{pro.name}</span>
 
-      <h2 style={{ textAlign: "right" }}>Total</h2>
-      <button>clear cart</button>
+                  <span>₹{pro.price}</span>
+                </div>
+
+                <hr />
+              </div>
+            );
+          })}
+          <div className="cart-bottom">
+            <h2>Total: ₹{total}</h2>
+
+            <button onClick={clearCart}>Clear Cart</button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
