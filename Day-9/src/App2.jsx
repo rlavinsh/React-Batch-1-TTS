@@ -5,6 +5,7 @@ const App2 = () => {
     name: "",
     email: "",
     password: "",
+    skills: [],
   });
 
   function handleChange(e) {
@@ -14,6 +15,20 @@ const App2 = () => {
       ...student,
       [e.target.name]: e.target.value,
     });
+  }
+
+  function handleCheckbox(e) {
+    console.log(e.target.value);
+    if (e.target.checked) {
+      setStudent({ ...student, skills: [...student.skills, e.target.value] });
+    } else {
+      setStudent({
+        ...student,
+        skills: student.skills.filter((skill) => {
+          return skill !== e.target.value;
+        }),
+      });
+    }
   }
   function handleSubmit(e) {
     e.preventDefault();
@@ -58,6 +73,37 @@ const App2 = () => {
         />
         <br />
         <br />
+        <label htmlFor="">Skills:</label>
+        <input
+          type="checkbox"
+          value="HTML"
+          onChange={handleCheckbox}
+          name="skills"
+        />
+        HTML
+        <input
+          type="checkbox"
+          value="CSS"
+          onChange={handleCheckbox}
+          name="skills"
+        />
+        CSS
+        <input
+          type="checkbox"
+          value="JS"
+          onChange={handleCheckbox}
+          name="skills"
+        />
+        JS
+        <input
+          type="checkbox"
+          value="React"
+          onChange={handleCheckbox}
+          name="skills"
+        />
+        React
+        <br />
+        <br />
         <button>submit</button>
       </form>
       <hr />
@@ -66,6 +112,7 @@ const App2 = () => {
       <h1>Name:{student.name}</h1>
       <h2>Email:{student.email}</h2>
       <h2>Password:{student.password}</h2>
+      <h2>Skills:{student.skills.join(",")}</h2>
     </div>
   );
 };
