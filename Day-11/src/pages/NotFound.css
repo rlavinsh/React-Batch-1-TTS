@@ -1,0 +1,269 @@
+.not-found {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 24px;
+  color: #fff;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(99, 102, 241, 0.14),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #080b14 0%, #0d1020 50%, #090b13 100%);
+}
+
+.not-found__glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.16);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.not-found__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+}
+
+.not-found__illustration {
+  position: relative;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.error-number {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(130px, 20vw, 210px);
+  line-height: 0.8;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  color: #fff;
+  text-shadow:
+    0 0 50px rgba(129, 140, 248, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.zero {
+  position: relative;
+  width: clamp(105px, 16vw, 175px);
+  height: clamp(105px, 16vw, 175px);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #6366f1, #8b5cf6);
+  box-shadow:
+    0 0 60px rgba(99, 102, 241, 0.45),
+    inset 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.zero::before {
+  content: "";
+  position: absolute;
+  inset: 24%;
+  border-radius: 50%;
+  background: #080b14;
+}
+
+.zero__planet {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 23%;
+  left: 20%;
+  border-radius: 50%;
+  background: #c4b5fd;
+  box-shadow: 0 0 15px rgba(196, 181, 253, 0.7);
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.planet--one {
+  width: 10px;
+  height: 10px;
+  top: 35px;
+  left: 18%;
+  background: #818cf8;
+  box-shadow: 0 0 18px #818cf8;
+}
+
+.planet--two {
+  width: 6px;
+  height: 6px;
+  right: 17%;
+  bottom: 42px;
+  background: #a78bfa;
+  box-shadow: 0 0 14px #a78bfa;
+}
+
+.star {
+  position: absolute;
+  color: #a5b4fc;
+  font-size: 22px;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.star--one {
+  left: 11%;
+  top: 70px;
+}
+
+.star--two {
+  right: 10%;
+  top: 90px;
+  font-size: 15px;
+  animation-delay: 0.8s;
+}
+
+.not-found__eyebrow {
+  margin: 0 0 14px;
+  color: #a5b4fc;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+h1 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+
+h1 span {
+  color: #818cf8;
+}
+
+.not-found__description {
+  max-width: 540px;
+  margin: 22px auto 0;
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.not-found__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+}
+
+.button--primary:hover {
+  box-shadow: 0 14px 35px rgba(99, 102, 241, 0.38);
+}
+
+.button--secondary {
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 600px) {
+  .not-found {
+    padding: 30px 20px;
+  }
+
+  .not-found__illustration {
+    height: 190px;
+  }
+
+  .not-found__description {
+    font-size: 15px;
+  }
+
+  .not-found__actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .star--one {
+    left: 5%;
+  }
+
+  .star--two {
+    right: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
+  }
+
+  .button {
+    transition: none;
+  }
+}
